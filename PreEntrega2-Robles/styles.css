@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+}
+
+body {
+    background-color: #ffeaea;
+    padding-top: 80px;
+}
+
+h1 {
+    font-size: 50px;
+    font-style: italic;
+    text-align: center;
+    margin: 30px 0px;
+}
+
+img {
+    width: 320px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    height: 70px;
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+
+
+.carrito{
+    filter: brightness(150%);
+    filter: contrast(100%);
+    width: 45px;
+    height: auto;
+}
+
+.carrito:hover{
+    filter: brightness(200%);
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    padding-top: 50px;
+    padding-bottom: 15px;
+
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.contenedor>div{
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.67);
+    background-color: #f5a4a4;
+    border-radius: 20px;
+}
+
+.contenedor>div:hover{
+    background-color: #f68888;
+}
+
+.Informacion{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Informacion>p:first-child{
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.Informacion .precio{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Informacion .precio span{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.Informacion button{
+    background-color: #651d0987;
+    width: 100px;
+    height: 35;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.Informacion button:hover{
+    filter: brightness(200%);
+    background-color:  #651d09;
+}
+   
+
+
+
+
+
+
