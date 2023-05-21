@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+    <link href="newlook.css" rel="stylesheet" type="text/css">
+    
+    <!--Iconos-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--mi div que contiene todo-->
+    <div class="wrapper">
+        <!--toda la info de la izquierda-->
+        <aside>
+            <header>
+                <h1 class="logo">Aby's Cabinet</h1>
+            </header>
+
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <button id="todos" class="boton-menu bt-categ active"><ion-icon name="heart"></ion-icon>Todos los productos</button>
+                    </li>
+                    <li>
+                        <button id="limpiadores" class="boton-menu bt-categ"><ion-icon name="heart-outline"></ion-icon>Limpiadores</button>
+                    </li>
+                    <li>
+                        <button id="esencias" class="boton-menu bt-categ"><ion-icon name="heart-outline"></ion-icon>Esencias</button>
+                    </li>
+                    <li>
+                        <button id="sueros" class="boton-menu bt-categ"><ion-icon name="heart-outline"></ion-icon>Sueros</button>
+                    </li>
+                    <li>
+                        <button id="hidratantes" class="boton-menu bt-categ"><ion-icon name="heart-outline"></ion-icon>Hidratantes</button>
+                    </li>
+                    <li>
+                        <button id="protectoresSolares" class="boton-menu bt-categ"><ion-icon name="heart-outline"></ion-icon>Protectores solares</button>
+                    </li>
+                    <li>
+                        <a class="boton-menu bt-carrito" href="cart.html"><ion-icon name="cart"></ion-icon>Carrito<span class="numero">0</span></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <footer>
+                <p class="texto-footer">© 2023 Aby's Cabinet</p>
+            </footer> 
+        </aside>
+
+        <!--toda la info de la derecha-->
+        <main>
+            <h2 id="titulo-principal" class="titulo-principal">Todos los productos</h2>
+            <div id="contenedor-productos" class="contenedor-productos">
+                <!--Completando con JS-->
+
+            </div>
+        </main>
+    </div>
+
+
+
+
+    <script src="newlook.js"></script>
+
+</body>
+
+</html>

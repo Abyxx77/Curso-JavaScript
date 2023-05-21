@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aby's Cabinet</title>
+    <link href="newlook.css" rel="stylesheet" type="text/css">
+    <!--Iconos-->
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--toda la info de la izquierda-->
+        <aside>
+            <header>
+                <h1 class="logo">Aby's Cabinet</h1>
+            </header>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a class="boton-menu bt-volver" href="nuevolook.html">
+                            <ion-icon name="arrow-back"></ion-icon>Seguir Comprando</a>
+                    </li>
+        
+                    <li>
+                        <a class="boton-menu bt-carrito active" href="cart.html">
+                            <ion-icon name="cart"></ion-icon></ion-icon>Carrito</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <footer>
+                <p class="texto-footer">© 2023 Aby's Cabinet</p>
+            </footer> 
+        </aside>
+
+        <!--toda la info de la derecha-->
+        <main>
+            <h2 class="titulo-principal">Carrito de compras</h2>
+            <div class="contenedor-carrito">
+                <p id="carrito-vacio" class="carrito-vacio">Tu carrito esta vacio <ion-icon name="sad"></ion-icon></p>
+                <!--productos que se vayan agregando al carrito-->
+                <div id="carrito-productos" class="carrito-productos disabled">
+                    <!--A completar por el JS-->
+                </div>
+
+                <div id="carrito-acciones" class="carrito-acciones disabled">
+                    <div class="carrito-acciones-izq">
+                        <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+                    </div>
+                    <div class="carrito-acciones-der">
+                        <div class="carrito-acciones-total">
+                            <p>Total:</p>
+                            <P id="total">$12200</P>
+                        </div>
+                        <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Finalizar  compra</button>
+                    </div>
+                </div>
+
+                <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra <ion-icon name="sparkles"></ion-icon></p>
+
+
+                
+            </div>
+        </main>
+    </div>
+
+
+    <script src="cart.js"></script>
+    
+</body>
+</html>
