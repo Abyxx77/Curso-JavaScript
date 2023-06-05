@@ -66,6 +66,7 @@ function cargarProductosCarrito() {
 cargarProductosCarrito(); 
 
 function actualizarBotonesEliminar () {
+
     botonesEliminar = document.querySelectorAll('.carrito-producto-eliminar');
 
     botonesEliminar.forEach(boton => {
@@ -74,6 +75,26 @@ function actualizarBotonesEliminar () {
 };
 
 function eliminarDelCarrito(event) {
+
+    Toastify({
+        text: "Producto Eliminado",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #ff7777, #f5a4a4)",
+          borderRadius: '2rem',
+          fontSize: '.75rem'
+        },
+        offset:{
+            x: '1.5rem',
+            y: '1.5rem'
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
     const idBoton = event.currentTarget.id;
     //console.log(idBoton);
     const index = productosDelCarrito.findIndex(producto => producto.id === idBoton);
@@ -87,10 +108,34 @@ function eliminarDelCarrito(event) {
 botonVaciar.addEventListener('click', vaciarCarrito);
 function vaciarCarrito() {
 
-    productosDelCarrito.lenght = 0;
-    localStorage.setItem('productos-del-carrito', JSON.stringify(productosDelCarrito));
+  Swal.fire({
+    title: 'Estas seguro/a?',
+    html: `${productosDelCarrito.reduce((acc, producto) => acc + producto.cantidad, 0)} productos seran borrados!`, 
+    icon: '<ion-icon name="alert-circle-outline"></ion-icon>',
+    width: 600,
+    padding: '3em',
+    color: '#716add',
+    background: '#fff url(/images/trees.png)',
+    backdrop: `
+      rgba(0,0,123,0.4)
+      url("/images/nyan-cat.gif")
+      left top
+      no-repeat
+  `,
+    showCancelButton: true,
+    focusConfirm: false,
+    confirmButtonText: 'Si',
+    cancelButtonText: 'No',
+  }) .then((result) => {
+    if (result.isConfirmed) {
+
+      productosDelCarrito.lenght = 0;
+      localStorage.setItem('productos-del-carrito', JSON.stringify(productosDelCarrito));
+      cargarProductosCarrito(); 
+
+    } 
+  })
     
-    cargarProductosCarrito(); 
 };
 
 function actualizarTotal () {
@@ -111,3 +156,32 @@ function comprarCarrito() {
     contenedorCarritoComprado.classList.remove('disabled');
 };
 
+
+
+Swal.fire({
+  title: 'Estas seguro?',
+  text: "Esta accion no se puede revertir!",
+  icon: <ion-icon name="alert-circle-outline"></ion-icon>,
+  width: 600,
+  padding: '3em',
+  color: '#716add',
+  background: '#fff url(/images/trees.png)',
+  backdrop: `
+    rgba(0,0,123,0.4)
+    url("/images/nyan-cat.gif")
+    left top
+    no-repeat
+  `,
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+  }
+})

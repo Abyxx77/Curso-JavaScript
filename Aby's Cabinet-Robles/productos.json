@@ -1,0 +1,92 @@
+[ 
+    {
+        "id":"limpiador-roundLab",
+        "titulo":"ROUND LAB 1025 Dokdo Cleanser 150mL",
+        "imagen":"imagenesnotnew/CleanserRoundLab.webp",
+        "categoria": {
+            "id":"limpiadores",
+            "nombre":"Limpiadores"
+        },
+        "precio":"$6500"
+    },
+    {
+        "id":"limpiador-cosrx",
+        "titulo":"COSRX Low Ph Good Mornig Gel Cleanser 150mL",
+        "imagen": "imagenesnotnew/GelCleanserCOSRX.jpeg",
+        "categoria": { 
+            "id":"limpiadores",
+            "nombre":"Limpiadores"
+        },
+        "precio":"$5000"
+    },
+    {
+        "id":"limpiador-beautyOfjoseon",
+        "titulo":"BEAUTY OF JOSEON Ginseng Cleansing Oil 210mL",
+        "imagen": "imagenesnotnew/GinsengCleansingOilBoJ.jpeg",
+        "categoria": {
+            "id":"limpiadores",
+            "nombre":"Limpiadores"
+        },
+        "precio":"$7000"
+    },
+    {
+        "id":"esencia-beautyOfjoseon",
+        "titulo":"BEAUTY OF JOSEON Ginseng Essence Water 150mL",
+        "imagen": "imagenesnotnew/GinsegEssenceBoJ.jpeg",
+        "categoria": {
+            "id":"esencias",
+            "nombre":"Esencias"
+        },
+        "precio":"$7500"
+    },
+    {
+        "id":"esencia-cosrx",
+        "titulo":"COSRX Advanced Snail 96 Mucin Power Essence 100mL",
+        "imagen": "imagenesnotnew/SnailEssenceCOSRX.jpeg",
+        "categoria": {
+            "id":"esencias",
+            "nombre":"Esencias"
+        },
+        "precio":"$7200"
+    },
+    {
+        "id":"hidratante-cosrx",
+        "titulo":"COSRX Advanced Snail 92 All In One Cream 100g",
+        "imagen": "imagenesnotnew/CreamCOSRX.jpeg",
+        "categoria": {
+            "id":"hidratantes",
+            "nombre":"Hidratantes"
+        },
+        "precio":"$8000"
+    },
+    {
+        "id":"protectorSolar-beautyOfjoseon",
+        "titulo":"BEAUTY OF JOSEON Relief Sun: Rice + Probiotics 50mL",
+        "imagen": "imagenesnotnew/sunscreenBeautyOfJoseon.webp",
+        "categoria": {
+            "id":"protectoresSolares",
+            "nombre":"Protectores Solares"
+        },
+        "precio":"$6500"
+    },
+    {
+        "id":"protectorSolar-abib",
+        "titulo":"ABIB Quick Sunstick Protection Bar 22g",
+        "imagen": "imagenesnotnew/SunstickAbib.webp",
+        "categoria": {
+            "id":"protectoresSolares",
+            "nombre":"Protectores Solares"
+        },
+        "precio":"$7500"
+    },
+    {
+        "id":"protectorSolar-isntree",
+        "titulo":"ISNTREE Hyaluronic Acid Watery Sun Gel 50mL",
+        "imagen": "imagenesnotnew/SunstickIsntree.jpeg",
+        "categoria": {
+            "id":"protectoresSolares",
+            "nombre":"Protectores Solares"
+        },
+        "precio":"$8200"
+    }
+]

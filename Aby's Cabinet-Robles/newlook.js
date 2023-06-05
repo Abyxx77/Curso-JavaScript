@@ -1,97 +1,13 @@
 
-// Productos
-const productos = [ 
-    {
-        id:'limpiador-roundLab',
-        titulo:'ROUND LAB 1025 Dokdo Cleanser 150mL',
-        imagen:'/Users/impacto/Documents/PreEntrega2-Robles/probando/imagenesnotnew/CleanserRoundLab.webp',
-        categoria: {
-            id:'limpiadores',
-            nombre:'Limpiador'
-        },
-        precio:'$6500'
-    },
-    {
-        id:'limpiador-cosrx',
-        titulo:'COSRX Low Ph Good Mornig Gel Cleanser 150mL',
-        imagen: '/Users/impacto/Documents/PreEntrega2-Robles/probando/imagenesnotnew/GelCleanserCOSRX.jpeg',
-        categoria: { 
-            id:'limpiadores',
-            nombre:'Limpiador'
-        },
-        precio:'$5000'
-    },
-    {
-        id:'limpiador-beautyOfjoseon',
-        titulo:'BEAUTY OF JOSEON Ginseng Cleansing Oil 210mL',
-        imagen: '/Users/impacto/Documents/PreEntrega2-Robles/probando/imagenesnotnew/GinsengCleansingOilBoJ.jpeg',
-        categoria: {
-            id:'limpiadores',
-            nombre:'Limpiador'
-        },
-        precio:'$7000'
-    },
-    {
-        id:'esencia-beautyOfjoseon',
-        titulo:'BEAUTY OF JOSEON Ginseng Essence Water 150mL',
-        imagen: '/Users/impacto/Documents/PreEntrega2-Robles/probando/imagenesnotnew/GinsegEssenceBoJ.jpeg',
-        categoria: {
-            id:'esencias',
-            nombre:'Esencia'
-        },
-        precio:'$7500'
-    },
-    {
-        id:'esencia-cosrx',
-        titulo:'COSRX Advanced Snail 96 Mucin Power Essence 100mL',
-        imagen: '/Users/impacto/Documents/PreEntrega2-Robles/probando/imagenesnotnew/SnailEssenceCOSRX.jpeg',
-        categoria: {
-            id:'esencias',
-            nombre:'Esencia'
-        },
-        precio:'$7200'
-    },
-    {
-        id:'hidratante-cosrx',
-        titulo:'COSRX Advanced Snail 92 All In One Cream 100g',
-        imagen: '/Users/impacto/Documents/PreEntrega2-Robles/probando/imagenesnotnew/CreamCOSRX.jpeg',
-        categoria: {
-            id:'hidratantes',
-            nombre:'Hidratante'
-        },
-        precio:'$8000'
-    },
-    {
-        id:'protectorSolar-beautyOfjoseon',
-        titulo:'BEAUTY OF JOSEON Relief Sun: Rice + Probiotics 50mL',
-        imagen: '/Users/impacto/Documents/PreEntrega2-Robles/probando/imagenesnotnew/sunscreenBeautyOfJoseon.webp',
-        categoria: {
-            id:'protectoresSolares',
-            nombre:'Protector Solar'
-        },
-        precio:'$6500'
-    },
-    {
-        id:'protectorSolar-abib',
-        titulo:'ABIB Quick Sunstick Protection Bar 22g',
-        imagen: '/Users/impacto/Documents/PreEntrega2-Robles/probando/imagenesnotnew/SunstickAbib.webp',
-        categoria: {
-            id:'protectoresSolares',
-            nombre:'Protector Solar'
-        },
-        precio:'$7500'
-    },
-    {
-        id:'protectorSolar-isntree',
-        titulo:'ISNTREE Hyaluronic Acid Watery Sun Gel 50mL',
-        imagen: '/Users/impacto/Documents/PreEntrega2-Robles/probando/imagenesnotnew/SunstickIsntree.jpeg',
-        categoria: {
-            id:'protectoresSolares',
-            nombre:'Protector Solar'
-        },
-        precio:'$8200'
-    }
-];
+let productos = [];
+
+fetch("./productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        cargaProductos(productos);
+    })
+    
 
 // Llamo desde HTML
 const contenedorProductos = document.querySelector('#contenedor-productos');
@@ -125,8 +41,7 @@ function cargaProductos(categoriaElegida) {
     actualizarBotonesAgregar();
     // console.log(botonesAgregar);
 } 
-// primero que aparezcan todos los productos
-cargaProductos(productos); 
+
 
 //mostrar productos
 botonesCategoria.forEach(boton => {
@@ -139,6 +54,7 @@ botonesCategoria.forEach(boton => {
             const categoriaElegida = productos.find(producto => producto.categoria.id === event.currentTarget.id);
             console.log(categoriaElegida);
             tituloPrincipal.innerText = categoriaElegida.categoria.nombre;
+            cargaProductos(categoriaElegida);
 
             const categoriasBoton = productos.filter(producto => producto.categoria.id === event.currentTarget.id);
             cargaProductos(categoriasBoton); 
@@ -173,6 +89,25 @@ if (productosDelCarritoLS) {
 };
 
 function agregarAlCarrito(event) {
+
+    Toastify({
+        text: "Producto Agregado",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #ff7777, #f5a4a4)",
+          borderRadius: '2rem',
+          fontSize: '.75rem'
+        },
+        offset:{
+            x: '1.5rem',
+            y: '1.5rem'
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
 
     const idBoton = event.currentTarget.id;
     //console.log(idBoton);
